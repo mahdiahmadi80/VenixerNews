@@ -1,0 +1,51 @@
+{% comment %} <div>
+    <div class="how2 how2-cl4 flex-s-c m-b-30">
+      <h3 class="f1-m-2 cl3 tab01-title">Category</h3>
+    </div>
+
+    <div class="flex-wr-s-s m-rl--5">
+      <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">Fashion</a>
+
+      <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">Lifestyle</a>
+
+      <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">Denim</a>
+
+      <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">Streetstyle</a>
+
+      <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">Crafts</a>
+
+      <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">Magazine</a>
+
+      <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">News</a>
+
+      <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">Blogs</a>
+    </div>
+  </div> {% endcomment %}
+
+
+
+  <div class="p-b-37">
+    <div class="how2 how2-cl4 flex-s-c">
+      <h3 class="f1-m-2 cl3 tab01-title">
+        فهرست دسته بندی
+      </h3>
+    </div>
+
+    <ul class="p-t-32">
+    {% for cat,num in categories_count.items %}
+      <li class="p-rl-4 p-b-19">
+        <a href="{% url 'blog:category' cat=cat.title %}" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
+          <span>
+         {{cat}}
+          </span>
+
+          <span>
+            تعداد اخبار:
+            {{num}}
+          </span>
+        </a>
+      </li>
+    {% endfor %}
+     
+    </ul>
+  </div> 

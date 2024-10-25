@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>ثبت نام</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/logincss.css' %}">
+    
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form method="post" action="{% url 'accounts:signup'%}">
+      {%csrf_token%}
+        <h3>ثبت نام</h3>
+
+        <label for="username">نام کاربری</label>
+        <input type="text" name="username" placeholder="Email or Phone" id="username">
+
+        <label for="password">رمز</label>
+        <input type="password" name="password1" placeholder="Password" id="password">
+        <label for="password">تکرار رمز</label>
+        <input type="password" name="password2" placeholder="Password_confirm" id="password_confirm ">
+        <button type="submit">ثبت نام</button>
+    
+    </form>
+</body>
+</html>
